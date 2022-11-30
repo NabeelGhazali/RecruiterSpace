@@ -1,21 +1,24 @@
-# Recruitersspace
+# RecruiterSpace - Resume Handling System
 [website] (https://recruitersspace.herokuapp.com)
 [recruiter login] (https://recruitersspace.herokuapp.com/signup)
 
-Information Capture and Dissemination Environment
+## Project Overview
 
-Abstract—To establish a recruitment system where the applicants can submit their profile details electronically which can be accessed by the recruiters through a dedicated portal to ease the process of recruitment.
-I.	PART I
-A.	ARCHITECTURE DESIGN
-Architectural design is one of the most integral part of the software system development phase. The architectural design is majorly concerned with how a system is structured and organized. It also takes into account of how the system should behave according to the functional and non-functional requirements.
-The architectural model is developed using a block diagram which basically illustrates how the system is organized and structured. The blocks used in the models defined a particular component or part of the system which is then refined into more blocks introduced in them which describes sub-components. The arrows between the blocks define the relationship between the components or the direction of the flow of data between components.
+- Designed an **Information Capture and Dissemination Environment (ICDE)** based application which allows recruiters to recruit potential candidates on their background and skills
+- Developed the app on flask framework following software engineering best practices such as Agile using scrum methodology and pair programming with the required and in depth documentation
+- Designed the front-end using HTML and CSS and the backend using Python’s web framework flask. Integrated the front end with the back end using JavaScript. Built the required database with PostgreSQL using SQLAlchemy as object relational mapper for python classes
+
+## ARCHITECTURE DESIGN
+
+The architectural model is developed using a block diagram which basically illustrates how the system is organized and structured. The blocks used in the models define a particular component or part of the system which is then refined into more blocks introduced in them which describes sub-components. The arrows between the blocks define the relationship between the components or the direction of the flow of data between components.
 Fig [1] shows the architecture design of our application (recruiter’s space) using UML diagram. 
  ![image](https://user-images.githubusercontent.com/64001052/148626663-0ec4f8fb-478f-4245-98d5-db74fa47dd29.png)
 
 
 Fig. 1: Architecture design of Recruiter’s space
-B.	SOFTWARE PROCESS
-The architectural design presented in this delivered is developed on the basis of the system and user requirements that were included in deliverable 1 and deliverable 2. The requirements or functionalities mentioned in the user stories in previous deliverables such as account creation, login, applicant profile view, filter applicant’s profile etc. are used to design this architecture model.
+
+## SOFTWARE PROCESS
+The architectural design is developemed on the basis of the system and user requirements. The requirements or functionalities mentioned in the user stories such as account creation, login, applicant profile view, filter applicant’s profile etc. are used to design this architecture model.
 Initially, the applicant is requested to fill a form to create applicant’s profile. Upon successful submission of the form, all the details that the applicant enters is stored into the data base. On the other hand, the recruiter can access all the applicant profiles stored in the database. The recruiter can also filter or sort all the application suitable to the recruiter’s needs. All the above mentioned functionalities are in phase with the user and system requirements mentioned in the previous deliverables
 Fig [2] presents the activity diagram of our application (recruiter’s space) which clearly depicts the activities involved in our software system and the data processes.
 ![image](https://user-images.githubusercontent.com/64001052/148626677-a8bb0d54-3f8c-448a-ad5c-dd8da42577a7.png)
@@ -23,11 +26,7 @@ Fig [2] presents the activity diagram of our application (recruiter’s space) w
  
 Fig. 2: Activity Diagram of Recruiter’s space
 
-
-C.	ARCHITECTURE DESIGN REVISIONS:
-The architecture design and system design of our ICDE application are in parallel with the user and system requirements in the previous deliverables. Therefore, no revisions are applicable to our architecture design.
-
-D.	MVC ARCHITECTURE
+## MVC ARCHITECTURE
  ![image](https://user-images.githubusercontent.com/64001052/148626688-701754d4-6b3e-4b3a-9800-5ff6b51547d2.png)
 
 Fig. 3: MVC Architecture of Recruiter’s space
@@ -39,10 +38,7 @@ The Model view controller (MVC) shown in Fig [3] for our application is a softwa
 MVC separates the architecture component and is designed in order to handle specific development aspects of an application. MVC separates the business logic and presentation layer from each other. Nowadays, MVC architecture is used for both web development and designing mobile applications.
 
 Model:
-The model is responsible for getting and manipulating the data, Usually, Model interacts with the database. In our case it is a PostgreSQL database. Model responds to the request from the view and also responds. Model also performs data operations to the data in the database. For example, the recruiter whenever wants to find an applicant from a specific department, he can just apply a filter of the specific department.
-
-
-
+The model is responsible for fetching and manipulating the data. Usually, Model interacts with the database. In our case it is a PostgreSQL database. Model responds to the request from the view and also responds. Model also performs data operations to the data in the database. For example, the recruiter whenever wants to find an applicant from a specific department, he can just apply a filter of the specific department.
 
 View:
 View is actually a user interface, it is what the user sees on the web browser and how they interact with the web page. View consists of HTML and CSS along with the dynamic values from the controller, the structure of the data is accessed and the information contained within is used to render the HTML content of the page the user ultimately sees in the browser. In our project we have used the Flask framework for the view components.
@@ -51,7 +47,7 @@ Controller:
 Controller acts as broker in between the model and view. The controller will request the model to get some data from the database and then the controller will take the data and load it to the view. The data retrieved from the model is usually added to a data structure (like link/dictionary) and structure is what we see in the view. 
 Controller takes in user input such as Applicant data or recruiters login credentials. This will happen when the applicant clicks on the submit button after filling out the form or it could happen when the recruiter registers himself which is a post request. 
 
-E.	LAYERED ARCHITECTURE
+## LAYERED ARCHITECTURE
  ![image](https://user-images.githubusercontent.com/64001052/148626707-d6ce7bea-1ec7-419a-a259-000d31099054.png)
 
 Fig. 4: Layered architecture of Recruiter’s space
@@ -63,8 +59,6 @@ In our case we have 4 layered architecture patterns as shown in figure.
 1.	User interface layer:
 This layer interacts with the applicant and recruiter. Through web applications such as forms, login/sign in for recruiter. It is the top most visible layer in the application. It defines how our application appears to the user. We used the Flask framework for this layer.
 
-
-
 2.	User communication layer 
 This layer provides the user interface functionality that is delivered through the web browser. It allows applicants to fill the data and recruiter to log-in and sign-in, this layer also ensures that the operations of recruiter and applicant are separated. 
 
@@ -74,7 +68,7 @@ The 3rd layer provides the functionality of the application, for example, a recr
 4.	Database Layer
 Finally, the lowest layer contains tables and data managed by the application. Operations such as search, insert, delete, and update are executed here.
 
-F.	PROS AND CONS OF DESIGN
+## PROS AND CONS OF DESIGN
 For the development of Recruiter’s Space, we made some decisions which are:
 
 Database:
@@ -83,11 +77,6 @@ Also, we are using SqlAlchemy as an ORM so that python classes are easily transl
 
 Framework:
 In python, Flask and Django are the two web development frameworks available. We have opted for Flask because it involves minimal coding, is lightweight and is easy to deploy in production. Moreover, to display data on html page, stored in database related to a particular applicant, we have used to jinja templates, available only in Flask. Due to these reasons, Flask was an obvious choice over Django Framework.
-
-
-
-
-
 
 Python:
 We have chosen python as our programming language because it is an open source language that works with a vast sets of libraries, and all the coding information needed is available on the internet. It is simple and easy to understand and offers dynamic typing capabilities. Mainly, it is used as a backend programming language 
@@ -102,22 +91,14 @@ We are using GET and POST in our ICDE.
 Message exchange format:
 Due to its easy use and integration we are using JSON (Java script object notation) format to exchange information between clients and servers.
 
-II.	PART II
-A.	SOFTWARE METRICS
-The estimation of countable software attributes is called software metrics. Apart from measuring software performance, these metrics also help in estimating productivity and other properties and planning work items. It is one of the methods managements adopts to track software development progress and to set future targets. There are two types of software metrics, internal and external metrics. Internal metrics are of great significance for the developer for example lines of code. While the external metrics include properties like reliability, usability and functionality and is important for the user. Table I shows partition of tasks achieved so far and their metric values. It gives information about task name, Lines of code, granularity level and number of units.
-
-B.	GRANUALITY OF COMPONENTS
-Analyzing the right amount of granularity in a model is imperative to make sure the model is elaborative as per requirement without distorting the data. Therefore, it is vital to understand the concept of granularity and its application. When discussing granularity, a major barrier we come across is a lack of understanding and consistent language. Although, some research has been done to explain granularity in the context of engineering design, different terminologies have been used to explain this by different communities. The following section explains some important concepts and their usage in model granularity. It provides a different viewpoint on granularity and can be useful in measuring granularity levels.
-
-
-CLASSES/OBJECTS
+### CLASSES/OBJECTS
 
 •	RegistrationForm(FlaskForm)
 •	User(db.Model)
 •	Candidates(db.Model)
 •	RegistrationControls(db.Model)
 
-METHODS
+### METHODS
 •	counter()
 •	freqs()
 •	registrations()
@@ -136,10 +117,10 @@ METHODS
 •	signup_post()
 •	logout()
 
-PACKAGES
+### PACKAGES
 •	RECRUITERSSPACE
 
-LIBRARIES
+### LIBRARIES
 
 •	Flask.WTForms
 •	Flask_sqlalchemy
@@ -148,20 +129,8 @@ LIBRARIES
 •	Flask.templating
 •	Werkzeug.security
 
-
-FRAMEWORK
+### FRAMEWORK
 •	FLASK
 
-PLATFORMS
+### PLATFORMS
 •	Windows
-
-REFERENCES’
-[1] Sommerville, Software Engineering, Pearson, 2015.
-[2]https://realpython.com/the-model-view-controller-mvc-paradigm-summarized-with-legos/
-
-
-
-
-
-
- 
